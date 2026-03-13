@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__filesystem__list_directory",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=no --import-alias=\"@/*\" --use-npm --no-git)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=no --import-alias=\"@/*\" --use-npm --no-git --yes)",
+      "Read(//c/tmp/**)",
+      "Bash(npx create-next-app@latest eurovoyage --typescript --tailwind --eslint --app --src-dir=no --import-alias=\"@/*\" --use-npm --no-git --yes)",
+      "Bash(npm install @anthropic-ai/sdk lucide-react recharts)",
+      "Bash(npx shadcn@latest init --yes --defaults)"
+    ]
+  }
+}
