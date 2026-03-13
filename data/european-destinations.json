@@ -1,0 +1,203 @@
+{
+  "spain": {
+    "climate_zones": { "south": "mediterranean", "north": "oceanic" },
+    "best_months_warm": [4, 5, 6, 9, 10, 11],
+    "best_months_mild": [3, 4, 10, 11],
+    "best_months_cold": [],
+    "cities": {
+      "madrid": { "iata": "MAD", "type": ["culture", "food", "nightlife", "history"], "pop": 3300000 },
+      "barcelona": { "iata": "BCN", "type": ["culture", "beach", "food", "nightlife"], "pop": 1600000 },
+      "seville": { "iata": "SVQ", "type": ["culture", "history", "food"], "pop": 700000 },
+      "malaga": { "iata": "AGP", "type": ["beach", "culture", "food"], "pop": 580000 },
+      "valencia": { "iata": "VLC", "type": ["beach", "food", "culture"], "pop": 800000 }
+    }
+  },
+  "portugal": {
+    "climate_zones": { "all": "mediterranean" },
+    "best_months_warm": [5, 6, 7, 8, 9, 10],
+    "best_months_mild": [3, 4, 10, 11],
+    "best_months_cold": [12, 1, 2],
+    "cities": {
+      "lisbon": { "iata": "LIS", "type": ["culture", "food", "nightlife", "history"], "pop": 500000 },
+      "porto": { "iata": "OPO", "type": ["culture", "food", "history"], "pop": 220000 },
+      "faro": { "iata": "FAO", "type": ["beach", "culture"], "pop": 65000 }
+    }
+  },
+  "italy": {
+    "climate_zones": { "north": "continental", "south": "mediterranean" },
+    "best_months_warm": [5, 6, 9, 10],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [12, 1, 2],
+    "cities": {
+      "rome": { "iata": "FCO", "type": ["history", "culture", "food"], "pop": 2800000 },
+      "florence": { "iata": "FLR", "type": ["culture", "history", "food", "art"], "pop": 370000 },
+      "venice": { "iata": "VCE", "type": ["culture", "history", "romance"], "pop": 260000 },
+      "milan": { "iata": "MXP", "type": ["culture", "food", "nightlife"], "pop": 1400000 },
+      "naples": { "iata": "NAP", "type": ["food", "history", "culture"], "pop": 970000 },
+      "sicily": { "iata": "CTA", "type": ["beach", "history", "food"], "pop": 300000 }
+    }
+  },
+  "france": {
+    "climate_zones": { "north": "oceanic", "south": "mediterranean" },
+    "best_months_warm": [5, 6, 7, 8, 9],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [12, 1, 2],
+    "cities": {
+      "paris": { "iata": "CDG", "type": ["culture", "food", "history", "romance"], "pop": 2100000 },
+      "nice": { "iata": "NCE", "type": ["beach", "culture", "food"], "pop": 340000 },
+      "lyon": { "iata": "LYS", "type": ["food", "culture", "history"], "pop": 520000 },
+      "bordeaux": { "iata": "BOD", "type": ["food", "culture", "history"], "pop": 260000 }
+    }
+  },
+  "greece": {
+    "climate_zones": { "all": "mediterranean" },
+    "best_months_warm": [5, 6, 7, 8, 9, 10],
+    "best_months_mild": [4, 10, 11],
+    "best_months_cold": [],
+    "cities": {
+      "athens": { "iata": "ATH", "type": ["history", "culture", "food"], "pop": 660000 },
+      "santorini": { "iata": "JTR", "type": ["beach", "romance", "culture"], "pop": 15000 },
+      "mykonos": { "iata": "JMK", "type": ["beach", "nightlife"], "pop": 10000 },
+      "thessaloniki": { "iata": "SKG", "type": ["culture", "food", "history"], "pop": 320000 },
+      "crete": { "iata": "HER", "type": ["beach", "history", "adventure"], "pop": 630000 }
+    }
+  },
+  "croatia": {
+    "climate_zones": { "coast": "mediterranean", "inland": "continental" },
+    "best_months_warm": [6, 7, 8, 9],
+    "best_months_mild": [5, 6, 9, 10],
+    "best_months_cold": [],
+    "cities": {
+      "dubrovnik": { "iata": "DBV", "type": ["beach", "history", "culture"], "pop": 40000 },
+      "split": { "iata": "SPU", "type": ["beach", "history", "culture"], "pop": 170000 },
+      "zagreb": { "iata": "ZAG", "type": ["culture", "food", "nightlife"], "pop": 800000 }
+    }
+  },
+  "netherlands": {
+    "climate_zones": { "all": "oceanic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "amsterdam": { "iata": "AMS", "type": ["culture", "history", "nightlife", "food"], "pop": 870000 }
+    }
+  },
+  "czech_republic": {
+    "climate_zones": { "all": "continental" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "prague": { "iata": "PRG", "type": ["culture", "history", "nightlife", "food"], "pop": 1300000 }
+    }
+  },
+  "austria": {
+    "climate_zones": { "all": "continental" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "vienna": { "iata": "VIE", "type": ["culture", "history", "food", "music"], "pop": 1900000 },
+      "salzburg": { "iata": "SZG", "type": ["culture", "history", "adventure"], "pop": 155000 },
+      "innsbruck": { "iata": "INN", "type": ["adventure", "culture", "history"], "pop": 130000 }
+    }
+  },
+  "hungary": {
+    "climate_zones": { "all": "continental" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "budapest": { "iata": "BUD", "type": ["culture", "history", "food", "nightlife"], "pop": 1750000 }
+    }
+  },
+  "germany": {
+    "climate_zones": { "all": "oceanic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "berlin": { "iata": "BER", "type": ["culture", "history", "nightlife", "food"], "pop": 3600000 },
+      "munich": { "iata": "MUC", "type": ["culture", "food", "history"], "pop": 1500000 },
+      "hamburg": { "iata": "HAM", "type": ["culture", "food", "nightlife"], "pop": 1800000 }
+    }
+  },
+  "switzerland": {
+    "climate_zones": { "all": "alpine" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [12, 1, 2],
+    "cities": {
+      "zurich": { "iata": "ZRH", "type": ["culture", "food", "adventure"], "pop": 430000 },
+      "geneva": { "iata": "GVA", "type": ["culture", "food", "history"], "pop": 200000 },
+      "interlaken": { "iata": "ZRH", "type": ["adventure", "nature"], "pop": 6000 }
+    }
+  },
+  "ireland": {
+    "climate_zones": { "all": "oceanic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [11, 12, 1, 2, 3, 4],
+    "cities": {
+      "dublin": { "iata": "DUB", "type": ["culture", "nightlife", "history", "food"], "pop": 1400000 },
+      "galway": { "iata": "GWY", "type": ["culture", "adventure", "history"], "pop": 80000 }
+    }
+  },
+  "scotland": {
+    "climate_zones": { "all": "oceanic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "edinburgh": { "iata": "EDI", "type": ["culture", "history", "adventure"], "pop": 520000 }
+    }
+  },
+  "malta": {
+    "climate_zones": { "all": "mediterranean" },
+    "best_months_warm": [5, 6, 7, 8, 9, 10],
+    "best_months_mild": [3, 4, 10, 11],
+    "best_months_cold": [],
+    "cities": {
+      "valletta": { "iata": "MLA", "type": ["history", "culture", "beach"], "pop": 7000 }
+    }
+  },
+  "poland": {
+    "climate_zones": { "all": "continental" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [11, 12, 1, 2, 3],
+    "cities": {
+      "krakow": { "iata": "KRK", "type": ["history", "culture", "food"], "pop": 780000 },
+      "warsaw": { "iata": "WAW", "type": ["culture", "history", "food"], "pop": 1800000 }
+    }
+  },
+  "norway": {
+    "climate_zones": { "coast": "oceanic", "inland": "subarctic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [11, 12, 1, 2, 3, 4],
+    "cities": {
+      "oslo": { "iata": "OSL", "type": ["culture", "adventure", "history"], "pop": 700000 },
+      "bergen": { "iata": "BGO", "type": ["adventure", "nature", "culture"], "pop": 280000 }
+    }
+  },
+  "iceland": {
+    "climate_zones": { "all": "subarctic" },
+    "best_months_warm": [6, 7, 8],
+    "best_months_mild": [5, 9],
+    "best_months_cold": [11, 12, 1, 2, 3, 4],
+    "cities": {
+      "reykjavik": { "iata": "KEF", "type": ["adventure", "nature", "culture"], "pop": 130000 }
+    }
+  },
+  "turkey": {
+    "climate_zones": { "west": "mediterranean", "inland": "continental" },
+    "best_months_warm": [5, 6, 7, 8, 9, 10],
+    "best_months_mild": [4, 5, 9, 10],
+    "best_months_cold": [12, 1, 2],
+    "cities": {
+      "istanbul": { "iata": "IST", "type": ["culture", "history", "food", "nightlife"], "pop": 15500000 },
+      "cappadocia": { "iata": "ASR", "type": ["adventure", "culture", "history"], "pop": 50000 }
+    }
+  }
+}
