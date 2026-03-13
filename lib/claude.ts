@@ -8,6 +8,18 @@ function getClient() {
 
 const MODEL = 'claude-sonnet-4-6';
 
+// Strip markdown code fences / preamble and parse the first JSON object in Claude's response
+function parseJSON(text: string) {
+  // Remove code fences
+  let cleaned = text.replace(/^```(?:json)?\s*/im, '').replace(/```\s*$/im, '').trim();
+  // Extract from first { or [ to the matching last } or ]
+  const start = cleaned.search(/[{[]/);
+  if (start > 0) cleaned = cleaned.slice(start);
+  const end = Math.max(cleaned.lastIndexOf('}'), cleaned.lastIndexOf(']'));
+  if (end !== -1) cleaned = cleaned.slice(0, end + 1);
+  return JSON.parse(cleaned);
+}
+
 // ─── Destination Recommendations ──────────────────────────────────────────────
 
 export async function getDestinationRecommendations(prefs: {
@@ -72,7 +84,7 @@ Return ONLY valid JSON (no markdown, no code fences) matching this exact schema:
   });
 
   const text = message.content[0].type === 'text' ? message.content[0].text : '';
-  return JSON.parse(text);
+  return parseJSON(text);
 }
 
 // ─── Flight Intelligence (Layer 1 — free exploration) ─────────────────────────
@@ -131,7 +143,7 @@ Return ONLY valid JSON (no markdown, no code fences):
   });
 
   const text = message.content[0].type === 'text' ? message.content[0].text : '';
-  return JSON.parse(text);
+  return parseJSON(text);
 }
 
 // ─── Accommodation Curation ────────────────────────────────────────────────────
@@ -156,17 +168,12 @@ The traveler is visiting ${params.city} for ${params.days} days in ${params.mont
 Trip style: ${params.tripStyle.join(', ')}. Budget: $${params.maxPerNight}/night.
 Top attractions they care about: ${params.topAttractions.join(', ')}
 
-Here are accommodation options from Booking.com:
-${JSON.stringify(params.hotels, null, 2)}
+${params.hotels.length > 0
+  ? `Here are accommodation options from Booking.com to rank:\n${JSON.stringify(params.hotels, null, 2)}\n\nRank the top 3-5 best options considering location, value, reviews, and fit for a ${params.tripStyle.join('/')} traveler.`
+  : `No live hotel data is available. Recommend 3-4 well-known, highly-rated real hotels or apartments in ${params.city} that suit a ${params.tripStyle.join('/')} traveler with a $${params.maxPerNight}/night budget. Use your knowledge of actual hotels in this city.`
+}
 
-Rank the top 3-5 best options considering:
-- Location relative to the top attractions
-- Neighborhood walkability and tourist safety
-- Value for the price
-- Guest review quality
-- Whether it suits a ${params.tripStyle.join('/')} traveler
-
-Return ONLY valid JSON (no markdown):
+Return ONLY valid JSON (no markdown, no code fences, start directly with {):
 {
   "accommodations": [
     {
@@ -191,7 +198,7 @@ Return ONLY valid JSON (no markdown):
   });
 
   const text = message.content[0].type === 'text' ? message.content[0].text : '';
-  return JSON.parse(text);
+  return parseJSON(text);
 }
 
 // ─── Itinerary Generation ──────────────────────────────────────────────────────
