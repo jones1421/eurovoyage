@@ -34,7 +34,7 @@ export async function getDestinationRecommendations(prefs: {
 
   const message = await getClient().messages.create({
     model: MODEL,
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [
       {
         role: 'user',
