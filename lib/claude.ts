@@ -6,7 +6,8 @@ function getClient() {
   return new Anthropic({ apiKey: process.env.EURO_ANTHROPIC_API_KEY });
 }
 
-const MODEL = 'claude-sonnet-4-6';
+const MODEL_FAST = 'claude-haiku-4-5';   // structured JSON — fast & cheap
+const MODEL_RICH = 'claude-sonnet-4-6';  // creative prose (itinerary summary)
 
 // Strip markdown code fences / preamble and parse the first JSON object in Claude's response
 function parseJSON(text: string) {
@@ -33,7 +34,7 @@ export async function getDestinationRecommendations(prefs: {
   const monthName = new Date(2000, prefs.month - 1, 1).toLocaleString('en', { month: 'long' });
 
   const message = await getClient().messages.create({
-    model: MODEL,
+    model: MODEL_FAST,
     max_tokens: 8192,
     messages: [
       {
@@ -101,7 +102,7 @@ export async function getFlightIntelligence(params: {
   maxBudgetPerPerson: number;
 }) {
   const message = await getClient().messages.create({
-    model: MODEL,
+    model: MODEL_FAST,
     max_tokens: 2048,
     messages: [
       {
@@ -158,7 +159,7 @@ export async function curateAccommodations(params: {
   hotels: unknown[];
 }) {
   const message = await getClient().messages.create({
-    model: MODEL,
+    model: MODEL_FAST,
     max_tokens: 3000,
     messages: [
       {
@@ -211,7 +212,7 @@ export async function generateItinerarySummary(params: {
   totalEstimatedCost: number;
 }) {
   const message = await getClient().messages.create({
-    model: MODEL,
+    model: MODEL_RICH,
     max_tokens: 1500,
     messages: [
       {
