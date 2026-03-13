@@ -94,7 +94,7 @@ export default function StepReview({ state, itinerary, onGenerate, onBack }: Pro
                 className="inline-flex items-center gap-1 text-xs text-[#1e3a5f] border border-[#1e3a5f] rounded-full px-3 py-1 hover:bg-blue-50 transition"
               >
                 <ExternalLink className="h-3 w-3" />
-                {e.origin} → {e.destination} on Google Flights
+                {e.origin} → {e.destination} on Kayak
               </a>
             ))}
           </div>
@@ -145,7 +145,7 @@ export default function StepReview({ state, itinerary, onGenerate, onBack }: Pro
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 bg-[#1e3a5f] text-white text-sm px-4 py-2 rounded-lg hover:bg-[#2d4f7a] transition"
                 >
-                  ✈️ {link.airport} Flights
+                  ✈️ {link.airport} on Kayak
                 </a>
               ))}
             </div>

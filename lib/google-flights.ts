@@ -7,14 +7,10 @@ export function buildGoogleFlightsUrl(params: {
   cabinClass?: string;
 }): string {
   const { origin, destination, departureDate, returnDate, adults = 1 } = params;
-  const dateStr = returnDate
-    ? `on ${departureDate} through ${returnDate}`
-    : `on ${departureDate}`;
-  const travelerStr = adults > 1 ? ` for ${adults} people` : '';
-  const query = `Premium economy flights from ${origin} to ${destination} ${dateStr}${travelerStr}`;
-  const url = new URL('https://www.google.com/travel/flights');
-  url.searchParams.set('q', query);
-  return url.toString();
+  // Kayak deep-link: reliable URL format that actually pre-fills the search
+  const base = `https://www.kayak.com/flights/${origin}-${destination}/${departureDate}`;
+  const withReturn = returnDate ? `${base}/${returnDate}` : base;
+  return `${withReturn}/${adults}adults?cabin=premiumeconomy`;
 }
 
 export function buildMultiCityGoogleFlightsUrl(airports: string[], destination: string, dates: { departure: string; return?: string }): Record<string, string> {
