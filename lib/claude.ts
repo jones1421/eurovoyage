@@ -1,10 +1,12 @@
 import Anthropic from '@anthropic-ai/sdk';
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+// Initialize lazily so the key is always read fresh on each request
+// (avoids Turbopack module-level caching issues in dev)
+function getClient() {
+  return new Anthropic({ apiKey: process.env.EURO_ANTHROPIC_API_KEY });
+}
 
-const MODEL = 'claude-sonnet-4-20250514';
+const MODEL = 'claude-sonnet-4-6';
 
 // ─── Destination Recommendations ──────────────────────────────────────────────
 
@@ -18,7 +20,7 @@ export async function getDestinationRecommendations(prefs: {
 }) {
   const monthName = new Date(2000, prefs.month - 1, 1).toLocaleString('en', { month: 'long' });
 
-  const message = await anthropic.messages.create({
+  const message = await getClient().messages.create({
     model: MODEL,
     max_tokens: 4096,
     messages: [
@@ -86,7 +88,7 @@ export async function getFlightIntelligence(params: {
   adults: number;
   maxBudgetPerPerson: number;
 }) {
-  const message = await anthropic.messages.create({
+  const message = await getClient().messages.create({
     model: MODEL,
     max_tokens: 2048,
     messages: [
@@ -143,7 +145,7 @@ export async function curateAccommodations(params: {
   topAttractions: string[];
   hotels: unknown[];
 }) {
-  const message = await anthropic.messages.create({
+  const message = await getClient().messages.create({
     model: MODEL,
     max_tokens: 3000,
     messages: [
@@ -201,7 +203,7 @@ export async function generateItinerarySummary(params: {
   tripStyle: string[];
   totalEstimatedCost: number;
 }) {
-  const message = await anthropic.messages.create({
+  const message = await getClient().messages.create({
     model: MODEL,
     max_tokens: 1500,
     messages: [
